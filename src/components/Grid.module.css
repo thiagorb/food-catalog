@@ -1,0 +1,18 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.grid__item {
+  padding: 10px;
+  box-sizing: border-box;
+  min-width: 0;
+  flex: 50% 1 1;
+}
+
+@media (min-width: 768px) {
+  .grid__item {
+    flex-basis: 33.3333%;
+  }
+}
