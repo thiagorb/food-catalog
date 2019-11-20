@@ -5,7 +5,7 @@ export const Grid: React.FC = ({ children }) => {
   return (
     <div className={styles.grid}>
       {React.Children.map(children, child => (
-        <div className={styles.grid__item}>{child}</div>
+        <div className={styles.item}>{child}</div>
       ))}
     </div>
   );

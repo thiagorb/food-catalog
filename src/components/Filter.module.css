@@ -1,0 +1,42 @@
+.filter {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.option {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.checkbox {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid #818181;
+  border-radius: 2px;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.checkbox.is-checked:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120%;
+  height: 100%;
+  background-image: url("../images/tick.svg");
+  background-position: 100% 50%;
+  background-size: 90%;
+  background-repeat: no-repeat;
+}

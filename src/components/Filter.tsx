@@ -1,21 +1,40 @@
 import React from "react";
-
-export interface FilterOption {
-  selected: boolean;
-  label: string;
-}
+import styles from "./Filter.module.css";
+import { FilterOption } from "../data";
+import { Tag } from "./Tag";
+import { typeColorMap } from "./Product";
 
 interface Props {
   options: FilterOption[];
+  onClickOption: (option: string) => void;
 }
 
-export const Filter: React.FC<Props> = ({ options }) => {
+const getCheckboxClasses = (option: FilterOption) => {
+  const classes = [styles.checkbox];
+
+  if (option.selected) {
+    classes.push(styles["is-checked"]);
+  }
+
+  return classes.join(" ");
+};
+
+export const Filter: React.FC<Props> = ({ options, onClickOption }) => {
   return (
-    <div>
+    <div className={styles.filter}>
       <div>Filter:</div>
-      <ul>
+      <ul className={styles.options}>
         {options.map(option => (
-          <li>{option.label}</li>
+          <li
+            className={styles.option}
+            key={option.label}
+            onClick={() => onClickOption(option.label)}
+          >
+            <Tag color={typeColorMap[option.label]}>
+              <div className={getCheckboxClasses(option)}></div>
+              {option.label}
+            </Tag>
+          </li>
         ))}
       </ul>
     </div>

@@ -1,5 +1,9 @@
 body {
-  background: #ddd;
+  background-color: #c8c8c8;
+  background-position: 50% 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-size: 14px;
 }
 
 a {
@@ -8,11 +12,18 @@ a {
 }
 
 .container {
-  width: calc(100% - 80px);
+  width: calc(100% - 30px);
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1240px;
 }
 
 img {
   width: 100%;
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .container {
+    width: calc(100% - 80px);
+  }
 }
